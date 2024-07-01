@@ -32,6 +32,13 @@ public class Deck {
     public void shuffleDeck(){
         Collections.shuffle(cards, new Random());
     }
+    //You are always drawing the first card
+    //That is why you are removing the first card
+    public Card drawCard(){
+        Card card = cards.get(0);
+        cards.remove(0);
+        return card;
+    }
     public String toString(){
         String deckString = "";
         for (Card card : cards){
