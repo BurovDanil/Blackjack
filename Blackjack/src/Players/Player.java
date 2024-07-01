@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Player extends Person{
     public int bet;
+    private boolean quit = false; //flag to indicate that the player wants to quit the game
     
     public Player(){
         super.setName("Player");
@@ -23,12 +24,18 @@ public class Player extends Person{
     public void setMoney(int money){
         this.money = money;
     }
+    public boolean hasQuit() {
+        return quit;
+    }
+    public void resetQuit() {
+        quit = false;
+    }
     public String getHandString(){
         return this.getHand().toString();
     }
     public void makeDecision(Deck deck, Deck discardDeck){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Select an option: \n 1. Hit \n 2. Stand");
+        System.out.println("Select an option: \n 1. Hit \n 2. Stand \n 3. Quit");
         int choice = scanner.nextInt();
 
         switch(choice){
@@ -36,6 +43,9 @@ public class Player extends Person{
                 super.hit(deck, discardDeck);
                 break;
             case 2:
+                break;
+            case 3:
+            quit = true;
                 break;
         }
     }

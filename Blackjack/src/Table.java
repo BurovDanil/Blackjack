@@ -29,6 +29,7 @@ public class Table {
 
     }
     public void startRound(){
+        while(true){
         int playerMoney = player.getMoney();
         Hand playerHand = new Hand();
         Hand dealerHand = new Hand();
@@ -62,6 +63,10 @@ public class Table {
         while(playerHand.calculateValueOfHand() < 21){
             player.makeDecision(deck, discardDeck);
             player.printHand();
+            if (player.hasQuit()) {
+                System.out.println("Player chose to quit. Ending game.");
+                break;
+            }
             if(player.hasBlackjack()){
                 System.out.println("Blackjack!");
                 player.setMoney(playerMoney + betForRound * 3 / 2);
@@ -77,5 +82,12 @@ public class Table {
                 break;
             }
         }
+        if(player.hasQuit()){
+            System.out.println("Player quits");
+            break;
+        }
+        System.out.println("Dealer's turn");
+    }
+    player.resetQuit(); //reset the flag for the next round
     }
 }
