@@ -7,20 +7,22 @@ public class Main {
         System.out.println("\n" + "Blackjack!" + "\n");
 
         Table table = new Table();
+        table.startRound();
+        
 
-        Deck deck = new Deck();
+        // Deck deck = new Deck();
 
-        Hand hand = new Hand();
+        // Hand hand = new Hand();
 
-        deck.makeDeck();
-        deck.shuffleDeck();
+        // deck.makeDeck();
+        // deck.shuffleDeck();
 
-        hand.takeCardFromDeck(deck);
-        System.out.println(hand.toString());
-        hand.takeCardFromDeck(deck);
-        System.out.println(hand.toString());
+        // hand.takeCardFromDeck(deck);
+        // System.out.println(hand.toString());
+        // hand.takeCardFromDeck(deck);
+        // System.out.println(hand.toString());
 
-        System.out.println(hand.calculateValueOfHand());
+        // System.out.println(hand.calculateValueOfHand());
 
 
         // System.out.println("Deck in order (START): \n");

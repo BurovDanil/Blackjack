@@ -18,6 +18,7 @@ public class Deck {
         cards.add(card);
     }
     public void makeDeck(){
+        for(int i = 0; i < 8; i++)
             for (Suit suit : Suit.values()){
                 for (Rank rank : Rank.values()){
                     Card card = new Card(suit, rank);

@@ -7,7 +7,7 @@ public class Hand {
     private ArrayList<Card> hand;
 
     public Hand(){
-        hand = new ArrayList<>();
+        hand = new ArrayList<Card>();
     }
     
     //Drawing of a card
@@ -32,5 +32,8 @@ public class Hand {
     }
     public String toString(){
         return hand.toString();
+    }
+    public Card getCard(int idx){
+        return hand.get(idx);
     }
 }

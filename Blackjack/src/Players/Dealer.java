@@ -1,5 +1,14 @@
 package Players;
 
-public class Dealer implements Person{
-    
+public class Dealer extends Person{
+    public Dealer(){
+
+        super.setName("Dealer");
+        super.hand = new Hand();
+    }
+    public void printFirstHand(){
+        System.out.println("The dealer's hand looks like this:");
+        System.out.println(super.getHand().getCard(0));
+        System.out.println("The second card is face down.");
+    }
 }
